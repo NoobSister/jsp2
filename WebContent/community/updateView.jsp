@@ -22,7 +22,7 @@ function post_data() {
  		<td><input type="text" name="subject" value="${bean.subject}" size="70" required></td>
  	</tr>
  	<tr><th>작성자</th>
- 		<td><input type="text" name="name" value="${baen.name}" size="70" disabled></td>
+ 		<td><input type="text" name="name" value="${bean.name}" size="70" disabled></td>
  	</tr>
  	
  	<tr><th>글 비밀번호</th>
@@ -34,7 +34,7 @@ function post_data() {
  	<tr><td colspan="2" align="center">
  	<input type="submit" value="저장" class="btn">
  	<input type="reset"  value="다시쓰기" class="btn">
- 	<input type="button" value="목록" class="btn">
+ 	<input type="button" value="목록" class="btn" onclick="location.href='listAction.jsp'">
  	</td></tr>
  </table>
  </form>
