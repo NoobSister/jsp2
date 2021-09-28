@@ -22,7 +22,7 @@
 	List<Freeboard> list = dao.getList(map);
 	
 	// out.print(list);
-	request.setAttribute("blists", list);
+	request.setAttribute("list", list);
 	pageContext.forward("listView.jsp");
 
 
