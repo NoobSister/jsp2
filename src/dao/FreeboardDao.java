@@ -57,10 +57,18 @@ public class FreeboardDao {
 		mapper.close();
 	}
 	
-	public void delete(int idx) {
+	public int delete(Map<String, Object> map) {
 		SqlSession mapper = sqlFactory.openSession();
-		mapper.delete("delete", idx);
+		int n = mapper.delete("delete", map);
 		mapper.commit();
 		mapper.close();
+		return n;
+	}
+	
+	public Freeboard passwordCheck(Map<String, Object> map) {
+		SqlSession mapper = sqlFactory.openSession();
+		Freeboard dto = mapper.selectOne("passwordCheck", map);
+		mapper.close();
+		return dto;
 	}
 }
