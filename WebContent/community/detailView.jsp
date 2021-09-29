@@ -50,7 +50,7 @@
 		</ul>
 	<div style="text-align: center;margin-bottom: 10px;">
 		<a class="button" href="updateAction.jsp?idx=${bean.idx}">수정</a>
-		<a class="button">삭제</a>
+		<a class="button" href="delete.jsp?idx=${bean.idx}">삭제</a>
 		<a class="button" href="listAction.jsp">목록</a>
 	</div>
 	<!-- 메인글 출력 끝 -->

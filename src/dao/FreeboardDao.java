@@ -57,4 +57,10 @@ public class FreeboardDao {
 		mapper.close();
 	}
 	
+	public void delete(int idx) {
+		SqlSession mapper = sqlFactory.openSession();
+		mapper.delete("delete", idx);
+		mapper.commit();
+		mapper.close();
+	}
 }
