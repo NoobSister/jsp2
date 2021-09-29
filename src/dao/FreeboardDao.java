@@ -45,7 +45,7 @@ public class FreeboardDao {
 	
 	public void insert(Freeboard dto) {
 		SqlSession mapper = sqlFactory.openSession();
-		mapper.insert("insert", dto);
+		mapper.insert("freeboard.insert", dto);
 		mapper.commit();
 		mapper.close();
 	}

@@ -56,11 +56,12 @@
 	<!-- 메인글 출력 끝 -->
 	<!-- 댓글 시작 -->
 	<form action="commentAction.jsp" method="post" name="frmCmt">
+	<input type="hidden" name="mref" value="${bean.idx}">
 		<hr class="line">
 		<div>
 			<span>댓글</span>
-			<span>commentCount</span>
-			<span>3열</span>
+			<span>[${bean.commentCount}]</span>
+			<span></span>
 		</div>
 		<hr class="line">
 		<ul id="main">
@@ -85,6 +86,20 @@
 					</li>
 				</ul>
 			</li>
+			<c:forEach var="cmt" items="${cmtlist}">
+			<li>
+				<ul>
+					<li>${cmt.name }</li>		
+					<li>${cmt.ip }</li>		
+					<li>${cmt.wdate }</li>
+					<!-- 댓글 삭제 : 글비밀번호 확인 X, 댓글 idx, 메인글 idx -->
+					<li><a href="javascript:deleteCmt('${cmt.idx}', '${bean.idx }')">삭제</a></li>
+				</ul>
+			</li>
+			<li>
+				<pre>${cmt.content }</pre>
+			</li>
+			</c:forEach>
 		</ul>
 	</form>
 </div>
@@ -135,6 +150,16 @@
 	   
    		function deleteSet() {
 			document.getElementById('myModal').style.display='block';
+		}
+   		
+   		function deleteCmt(cmtidx, idx) {
+   			console.log(cmtidx); console.log(idx);
+			const yn = confirm('댓글을 삭제하시겠습니까?');
+			if (yn) {
+				location.href='commentAction.jsp?del=&cmtidx=' + cmtidx + '&idx=' + idx;
+			} else {
+				alert('댓글 삭제 취소합니다.');
+			}
 		}
    </script>
 </body>

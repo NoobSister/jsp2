@@ -7,6 +7,7 @@ ul {
 		display:flex;
 		flex-direction:column;
 		list-style: none;
+
 	}
 .row , .row-2{
 		display: flex;
@@ -21,18 +22,18 @@ ul {
 .row > li:nth-child(1){
 	flex-basis:20%;
 	background-color: #283593;
-	color:white;
+	color: white;
 	border-radius: 3px;
 	font-size: 0.8em;
-}
+}	
 .row > li:nth-child(2){
 	flex-basis:35%;
-	color:#1A237E;
+	color: #1A237E;
 }
 .row > li:nth-child(3){
 	flex-basis:20%;
 	background-color: #283593;
-	color:white;
+	color: white;
 	border-radius: 3px;
 	font-size: 0.8em;
 }
@@ -41,7 +42,8 @@ ul {
 	color:#1A237E;
 }
 #content{
-	min-height: 50vh;
+	min-height: 40%;
+	
 }
 #content li:first-child {
 	padding: 3px;
@@ -54,6 +56,7 @@ ul {
 #content li:nth-child(2) {
 	padding: 5px;
 }
+
 .row-2 li{
 	padding : 1px 7px;
 }
@@ -86,6 +89,7 @@ span {
 .line {
 	border-top: 1px solid #1A237E;
 }
+
 .comment{
 	min-height: 70px;
 	margin-bottom: 8px;
@@ -96,16 +100,29 @@ span {
 	display: inline-block;
 	color:  #4080bf;
 }
+
 .now {
 	color : gray;
 	width:40%;
 	display: inline-block;
+	
 }
-@media screen and (max-width:768px) {	/* 375, 768 */
+@media screen and (max-width:375px) {   /* 375, 768 */
    .row {
+   		display:flex;
         flex-direction: column;
     }
+  
 }
+
+pre{
+	font-size: 1.1em;
+	color : gray;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	font-family: 맑은고딕, Malgun Gothic,sans-serif;
+}
+
 
 /* 글 비밀번호 입력 모달 */
 .modal {
@@ -120,13 +137,13 @@ span {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content/Box */
+/* Modal Content/Box   , css 반영이 안되면 브라우저에서 ctrl+f5 */ 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 30% auto; /* 15% from the top and centered */
     padding: 10px;
-    padding-bottom: 20px;
-    /* border: 3px solid#4080bf; */
+    padding-bottom : 20px;
+   /*  border: 3px solid#4080bf; */
     width: 30%; /* Could be more or less, depending on screen size */
     font-size: 1.1em;
     border-radius: 2px;
@@ -139,18 +156,17 @@ span {
     font-size: 28px;
     font-weight: bold;
 }
-input {
-	padding: 7px;
-	border: 2px solid #5c6bc0;
-	border-radius: 4px;
-	box-sizing: border-box;
-	margin-bottom: 10px;
-}
+
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-
-
+input{
+	padding: 7px;
+	border-radius: 4px;
+	border: 2px solid #ccc;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}

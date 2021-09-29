@@ -22,6 +22,7 @@
 		<li>조회수</li>
 		<li>작성일</li>
 		</ul>
+		<hr>
 	</li>
  	<c:forEach var="vo" items="${list}">
 	<li>
@@ -34,6 +35,7 @@
 		<li>${vo.readCount}</li>
 		<li><fmt:formatDate value="${vo.wdate}" pattern="yyyy-MM-dd"/></li>
 	</ul>
+	<hr>
 	</li>
  	</c:forEach>
 </ul>
