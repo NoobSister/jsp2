@@ -85,23 +85,23 @@ insert into board_comment (mref, name, password, content, ip)
 	values (142, '다현', '1234', '오늘 하루도 무사히', '192.168.11.11');
 
 
--- 댓글 개수 (글 목록에서 필요합니다.)
+-- 2) 댓글 개수 (글 목록에서 필요합니다.)
 select count(*) from board_comment where mref =	154;		-- 154번 글의 댓글 갯수
 select count(*) from board_comment where mref =	142;		-- 142번 글의 댓글 갯수
 select count(*) from board_comment where mref =	100;		-- 142번 글의 댓글 갯수
 
--- 2) 댓글 리스트
+-- 3) 댓글 리스트
 select * from board_comment where mref = 154;
 select * from board_comment where mref = 142;
 select * from board_comment where mref = 100;
 
--- 3) 글 목록 실행하는 dao.getList() 보다 앞에서 댓글갯수를 update
+-- 4) 글 목록 실행하는 dao.getList() 보다 앞에서 댓글갯수를 update
 update freeboard set commentCount=(
 	select count(*) from board_comment where mref =	154) where idx = 154;
 update freeboard set commentCount=(
 	select count(*) from board_comment where mref =	142) where idx = 142;
 
--- 4) 글 상세보기에서 댓글 입력 후 저장할 때
+-- 5) 글 상세보기에서 댓글 입력 후 저장할 때
 update freeboard set commentCount = commentCount + 1 where idx = 0;
 
 
