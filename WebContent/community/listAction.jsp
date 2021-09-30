@@ -1,3 +1,5 @@
+<%@page import="dto.PageDto"%>
+<%@page import="java.time.LocalDate"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
 <%@page import="dto.Freeboard"%>
@@ -14,17 +16,17 @@
 	else pageNo = Integer.parseInt(request.getParameter("page"));	// page = 1,2,3,4,...
 	
 	int pageSize = 15;
-	int startNo = (pageNo - 1) * pageSize;
+	// int startNo = (pageNo - 1) * pageSize;
+	PageDto pageDto = new PageDto(pageNo, dao.getCount(), pageSize);	// 페이지 처리에 필요한 객체(값) 생성
 	
 	Map<String, Integer> map = new HashMap<>();
 	map.put("pageSize", pageSize);
-	map.put("stargNo", startNo);
+	map.put("stargNo", pageDto.getStartNo());
 	List<Freeboard> list = dao.getList(map);
-	
-	// out.print(list);
+
+	request.setAttribute("today", LocalDate.now());
+	request.setAttribute("pageDto", pageDto);		// 페이지 처리에 필요한 값들
 	request.setAttribute("list", list);
 	pageContext.forward("listView.jsp");
-
-
-
+	// out.print(list);
 %>

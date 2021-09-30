@@ -21,8 +21,8 @@ ul {
 }
 .row > li:nth-child(1){
 	flex-basis:20%;
-	background-color: #283593;
-	color: white;
+	background-color: #bdb9b7;
+	color: black;
 	border-radius: 3px;
 	font-size: 0.8em;
 }	
@@ -32,8 +32,8 @@ ul {
 }
 .row > li:nth-child(3){
 	flex-basis:20%;
-	background-color: #283593;
-	color: white;
+	background-color: #bdb9b7;
+	color: black;
 	border-radius: 3px;
 	font-size: 0.8em;
 }
@@ -48,7 +48,7 @@ ul {
 #content li:first-child {
 	padding: 3px;
 	border-radius: 3px;
-	border: 1px solid #1A237E;
+	border: 1px solid #bdb9b7;
 	text-align: center;
 	font-size: 0.7em;
 	margin: 7px 0px;
@@ -61,7 +61,7 @@ ul {
 	padding : 1px 7px;
 }
 .button {
-    background-color: #5C6BC0;
+    background-color: #bdb9b7;
     color:white;
     padding: 7px 25px;
     text-decoration: none;  /*  밑줄제거  */
@@ -74,20 +74,20 @@ ul {
 }
 span {
 	padding : 1px 5px;
-	color: #304FFE;
+	color: gray;
 }
 .small {
 	font-size: 0.8rem;
 	 padding: 6px 10px;
-	 background-color: #3D5AFE;
+	 background-color: #bdb9b7;
 }
 .input{
 	padding: 7px 15px;
-	border: 1px solid #4080bf;
+	border: 1px solid #bdb9b7;
 	border-radius: 3px;
 }
 .line {
-	border-top: 1px solid #1A237E;
+	border-top: 1px solid #bdb9b7;
 }
 
 .comment{
