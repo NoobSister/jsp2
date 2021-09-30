@@ -42,8 +42,16 @@ ul .row {
     display: inline-block;
    text-align:center;
    font-size: 9pt;
+   border-radius: 2px;
 }
 .pagenum:hover{
      background-color:gray;
-     color:white;
+     color: purple;
 } 
+.current {
+	background-color: gray;
+	color: white;
+}
+
+
+

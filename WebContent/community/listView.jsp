@@ -63,9 +63,13 @@
 	<a class="pagenum" href="?page=${pageDto.startPage - 1}">&lt;</a>
 	<!-- 현재 페이지를 startPage 값에서 -1 로 변경하면 요청이 변경되면서 자동 계산. -->
 	</c:if>
+	
 	<c:forEach var="i" begin="${pageDto.startPage}" end="${pageDto.endPage}">
-		<a class="pagenum" href="?page=${i}">${i}</a>
+		<a class="pagenum
+			<c:if test="${pageDto.currentPage == i}">current</c:if>
+		" href="?page=${i}">${i}</a>
 	</c:forEach>
+	
 	<c:if test="${pageDto.endPage != pageDto.totalPage}">
 	<a class="pagenum" href="?page=${pageDto.endPage + 1}">&gt;</a>
 	<!-- 현재 페이지를 endtPage 값에서 +1 로 변경하면 요청이 변경되면서 자동 계산. -->
