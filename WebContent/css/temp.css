@@ -8,17 +8,17 @@ th {
 	text-align: center;
 	font-size: 90%;
 	width: 35%;
-	color: white;
-	background-color: #5c6bc0;
+	color: black;
+	background-color: #bdb9b7;
 	border-radius: 3px;
 }
 input, textarea {
 	padding: 7px 15px;
-	border: 1px solid #5c6bc0;
+	border: 1px solid #bdb9b7;
 	border-radius: 3px;
 }
 .btn {
-	background-color: #5C6BC0;
+	background-color: #bdb9b7;
     color:white;
     padding: 7px 25px;
     text-decoration: none;  /*  밑줄제거  */
