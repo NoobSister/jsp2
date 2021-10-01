@@ -9,6 +9,11 @@
 	String id = request.getParameter("userid");
 	String password = request.getParameter("password");
 	
+/* 	if (session.getAttribute("readIdx") == null) {
+		StringBuilder readIdx = new StringBuilder("/");
+		session.setAttribute("readIdx", readIdx);
+	} */
+	
 	// id는 'admin' 이고 password 'jcpdev' 라고 가정하고 합니다.
 //	if (id.equals("admin") && password.equals("jcpdev")) {	// -> db에서 확인하도록 변경 예정입니다.
 	Map<String, String> map = new HashMap<>();

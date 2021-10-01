@@ -10,7 +10,7 @@ import dto.Freeboard;
 import mybatis.SqlSessionBean;
 
 public class FreeboardDao {
-	SqlSessionFactory sqlFactory = SqlSessionBean.getSessionFactory();
+	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
 	private static FreeboardDao dao = new FreeboardDao();
 	private FreeboardDao() { }
 	public static FreeboardDao getInstance() {
@@ -21,7 +21,7 @@ public class FreeboardDao {
 	public List<Freeboard> getList(Map<String, Integer> map) {
 									// key(변수명처럼 이해) String, value 는 int
 		List<Freeboard> list = null;
-		SqlSession mapper = sqlFactory.openSession();
+		SqlSession mapper = factory.openSession();
 		list = mapper.selectList("getList", map);
 		mapper.close();
 		return list;
@@ -29,7 +29,7 @@ public class FreeboardDao {
 	
 	// idx로 한개 행 조회
 	public Freeboard getOne(int idx) {
-		SqlSession mapper = sqlFactory.openSession();
+		SqlSession mapper = factory.openSession();
 		Freeboard dto = mapper.selectOne("selectByIdx", idx);
 		mapper.close();
 		return dto;
@@ -37,28 +37,28 @@ public class FreeboardDao {
 	
 	// 테이블 데이터 행의 개수 조회
 	public int getCount() {
-		SqlSession mapper = sqlFactory.openSession();
+		SqlSession mapper = factory.openSession();
 		int cnt = mapper.selectOne("getCount");
 		mapper.close();
 		return cnt;
 	}
 	
 	public void insert(Freeboard dto) {
-		SqlSession mapper = sqlFactory.openSession();
+		SqlSession mapper = factory.openSession();
 		mapper.insert("freeboard.insert", dto);
 		mapper.commit();
 		mapper.close();
 	}
 	
 	public void update(Freeboard dto) {
-		SqlSession mapper = sqlFactory.openSession();
+		SqlSession mapper = factory.openSession();
 		mapper.update("update", dto);
 		mapper.commit();
 		mapper.close();
 	}
 	
 	public int delete(Map<String, Object> map) {
-		SqlSession mapper = sqlFactory.openSession();
+		SqlSession mapper = factory.openSession();
 		int n = mapper.delete("freeboard.delete", map);
 		mapper.commit();
 		mapper.close();
@@ -66,9 +66,17 @@ public class FreeboardDao {
 	}
 	
 	public Freeboard passwordCheck(Map<String, Object> map) {
-		SqlSession mapper = sqlFactory.openSession();
+		SqlSession mapper = factory.openSession();
 		Freeboard dto = mapper.selectOne("passwordCheck", map);
 		mapper.close();
 		return dto;
 	}
+	
+	public void readCount(int idx) {
+		SqlSession mapper = factory.openSession();
+		mapper.update("readCount", idx);
+		mapper.commit();
+		mapper.close();
+	}
+
 }
